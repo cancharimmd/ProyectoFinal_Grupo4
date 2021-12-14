@@ -1,0 +1,12 @@
+{% extends 'AppCoder/padre.html' %}
+
+{% load static %}
+
+
+{% block ContenidoQueCambia %}
+
+<h1>Este es la página con la clase:</h1>
+<h1 style="color: cornflowerblue;">Facultad</h1>
+<a class="btn btn-primary" href="{% url 'facultadFormulario' %}">Ingresar Datos - Formulario</a>
+
+{% endblock %}
