@@ -1,26 +1,5 @@
 from django.db import models
 
-# Create your models here.
-#class Curso(models.Model):
-#    nombre = models.CharField(max_length=40)
-#    camada = models.IntegerField()
-    
-#class Estudiante(models.Model):
- #   nombre = models.CharField(max_length=40)
-  #  apellido = models.CharField(max_length=40)
-  #  email = models.EmailField()
-    
-#class Profesor(models.Model):
- #   nombre = models.CharField(max_length=40)
-  #  apellido = models.CharField(max_length=40)
-   # email = models.EmailField()
-    #profesion = models.CharField(max_length=40)
-
-#class Entregable(models.Model):
- #   nombre = models.CharField(max_length=40)
-  #  fechaDeEntrega = models.DateField()
-   # entregado = models.BooleanField()
-
 class Autos(models.Model):
 
     marca = models.CharField(max_length=40)
@@ -28,6 +7,8 @@ class Autos(models.Model):
     tipo = models.CharField(max_length=40)
     entregado = models.BooleanField()
 
+    def __str__(self):
+        return f"AUTO: Marca {self.marca} - Modelo {self.modelo} - Tipo {self.tipo} - ¿Entregado? {self.entregado}"
 
 class Inmuebles(models.Model):
 
@@ -35,9 +16,14 @@ class Inmuebles(models.Model):
     ciudad = models.CharField(max_length=40)
     anio = models.IntegerField()
 
+    def __str__(self):
+        return f"INMUEBLE: Dirección {self.direccion} - Ciudad {self.ciudad} - Año {self.anio}"
 class Facultad(models.Model):
 
     anio = models.IntegerField()
     carrera = models.CharField(max_length=40)
     universidad = models.CharField(max_length=40)
     email = models.EmailField(max_length=40, default="", editable = False)
+ 
+    def __str__(self):
+        return f"FACULTAD: Año {self.anio} - Carrera {self.carrera} - Universidad {self.universidad} - Email {self.email}"
