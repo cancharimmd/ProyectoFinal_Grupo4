@@ -39,6 +39,7 @@ Pagina Web con 3 clases:
       3.1.- [FORMULARIO INMUEBLES] /AppCoder/inmuebleFormulario
     4.- [FACULTAD] /AppCoder/facultad
       4.1.- [FORMULARIO FACULTAD] /AppCoder/facultadFormulario
+    5.- [ADMIN] /admin (Usuario: diego; Password: 123456)
    
   **_PREVIEW_**
   *** 
