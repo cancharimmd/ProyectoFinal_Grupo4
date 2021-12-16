@@ -5,7 +5,7 @@ class AutoFormulario(forms.Form):
     marca = forms.CharField()
     modelo = forms.IntegerField()
     tipo = forms.CharField()
-    entregado = forms.BooleanField()
+    entregado = forms.BooleanField(required=False)
     
 class InmuebleFormulario(forms.Form):
     
