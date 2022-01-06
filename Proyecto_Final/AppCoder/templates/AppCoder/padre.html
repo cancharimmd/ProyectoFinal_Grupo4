@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Página web - Grupo 4</title>
+        <title>Blog Covid - Grupo 4</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'AppCoder/assets/favicon.ico' %}" />
         <!-- Bootstrap icons-->
@@ -25,9 +25,19 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'autos' %}">Autos</a>
+                <a class="navbar-brand" href="{% url 'vacunas' %}">Vacunas</a>
                 <a class="navbar-brand" href="{% url 'inmuebles' %}">Inmuebles</a>
                 <a class="navbar-brand" href="{% url 'facultad' %}">Factultad</a>              
+                
+                {% if user.is_authenticated %}
+                <a><strong>Usuario Logeado:</strong>  {{ user.get_username }}</a>
+                <a class="btn btn-primary" href="{% url 'Logout' %}">Logout</a>
+                {% else %}
+                <a class="btn btn-primary" href="{% url 'Login' %}">Login</a>
+                <a class="btn btn-primary" href="{% url 'Register' %}">Registrate</a>
+                {% endif %} 
+                
+            
                 <!----
                 <a class="btn btn-primary" href="#signup">Sign Up</a>
                 -->
@@ -35,24 +45,6 @@
         </nav>
 
 
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container position-relative">
-                <div class="row justify-content-center">
-                    <div class="col-xl-6">
-                        <div class="text-center text-white">
-                            <!-- Page heading-->
-                            <h1 class="mb-5">Proyecto Final CoderHouse - Grupo 4</h1>
-                            <!-- Signup form-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- * * SB Forms Contact Form * *-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- This form is pre-integrated with SB Forms.-->
-                            <!-- To make this form functional, sign up at-->
-                            <!-- https://startbootstrap.com/solution/contact-forms-->
-                            <!-- to get an API token!-->
-        </header>
-        
         {% block ContenidoQueCambia%}
 
         {% endblock %}

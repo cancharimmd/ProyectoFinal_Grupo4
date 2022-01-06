@@ -5,7 +5,7 @@ from .models import *
 # usuario: diego
 # password: 123456
 
-admin.site.register(Autos)
+admin.site.register(Vacunas)
 
 admin.site.register(Inmuebles)
 

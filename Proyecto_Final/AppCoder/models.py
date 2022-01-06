@@ -1,14 +1,19 @@
 from django.db import models
 
-class Autos(models.Model):
+class Vacunas(models.Model):
+    INTENSIDAD = (
+        (1, 'Poco'),
+        (2, 'Normal'),
+        (3, 'Mucho'),
+        )
 
-    marca = models.CharField(max_length=40)
-    modelo = models.IntegerField()
-    tipo = models.CharField(max_length=40)
-    entregado = models.BooleanField()
+    proveedor = models.CharField(max_length=40)
+    fecha_creacion = models.DateField()
+    pais_origen = models.CharField(max_length=40)
+    grado_de_dolor = models.IntegerField(default = 0, choices= INTENSIDAD)
 
     def __str__(self):
-        return f"AUTO: Marca {self.marca} - Modelo {self.modelo} - Tipo {self.tipo} - ¿Entregado? {self.entregado}"
+        return f"Vacuna de proveedor {self.proveedor} - Creado el {self.fecha_creacion} - Creado en {self.pais_origen} - Con un grado de dolor : {self.grado_de_dolor}"
 
 class Inmuebles(models.Model):
 
