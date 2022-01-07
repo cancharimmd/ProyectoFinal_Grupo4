@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from AppCoder.forms import VacunaFormulario, InmuebleFormulario, FacultadFormulario, UserRegisterForm
-from AppCoder.models import Vacunas, Inmuebles, Facultad
+from AppCoder.forms import VacunaFormulario, UserRegisterForm
+from AppCoder.models import Vacunas, Barbijos, Oximetros
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -10,6 +10,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+
 # Create your views here.
 
 #Render del inicio
@@ -17,17 +18,17 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 def inicio(request):
     return render(request, "AppCoder/inicio.html")
 
+#Render de acerca de mi
+def acerca_de_mi(request):
+    return render(request, "AppCoder/acerca_de_mi.html")
+
 #Render de todas las clases
 
-def inmuebles(request):
-    return render(request,"AppCoder/inmuebles.html")
+def barbijos(request):
+    return render(request,"AppCoder/barbijos.html")
 
-def facultad(request):
-    return render(request,"AppCoder/facultad.html")
-
-def entregables(request):
-    return render(request,"AppCoder/entregables.html")
-
+def oximetros(request):
+    return render(request,"AppCoder/oximetros.html")
 
 def vacunas(request):
     return render(request, "AppCoder/vacunas.html")
@@ -37,7 +38,6 @@ def vacunas(request):
 class VacunaList(ListView):
     model = Vacunas
     template_name = 'AppCoder/vacuna_list.html'
-
 
 class VacunaDetalle(LoginRequiredMixin, DetailView):
     model = Vacunas
@@ -82,6 +82,61 @@ def eliminarVacunas(request, vacuna_proveedor):
     contexto = {'vacunas':vacunas}  
     return render(request, "AppCoder/leerVacunas.html", contexto)
 
+#CRUD Barbijos
+
+class BarbijosList(ListView):
+    model = Barbijos
+    template_name = 'AppCoder/barbijo_list.html'
+
+class BarbijosDetalle(LoginRequiredMixin, DetailView):
+    model = Barbijos
+    template_name = 'AppCoder/barbijo_detalle.html'
+    
+class BarbijosCreacion(LoginRequiredMixin,CreateView):
+    
+    model = Barbijos
+    success_url = "/AppCoder/barbijo/list"
+    fields = ['marca', 'tamanio', 'precio']
+
+class BarbijosUpdate(LoginRequiredMixin, UpdateView):
+    
+    model = Barbijos
+    success_url = "/AppCoder/barbijo/list"
+    fields = ['marca', 'tamanio', 'precio']
+
+class BarbijosDelete(LoginRequiredMixin, DeleteView):
+    
+    model = Barbijos
+    success_url = "/AppCoder/barbijo/list"
+ 
+
+#CRUD Oximetro
+
+class OximetrosList(ListView):
+    model = Oximetros
+    template_name = 'AppCoder/oximetro_list.html'
+
+class OximetrosDetalle(LoginRequiredMixin, DetailView):
+    model = Oximetros
+    template_name = 'AppCoder/oximetro_detalle.html'
+    
+class OximetrosCreacion(LoginRequiredMixin,CreateView):
+    
+    model = Oximetros
+    success_url = "/AppCoder/oximetro/list"
+    fields = ['marca', 'modelo', 'precio']
+
+class OximetrosUpdate(LoginRequiredMixin, UpdateView):
+    
+    model = Oximetros
+    success_url = "/AppCoder/oximetro/list"
+    fields = ['marca', 'modelo', 'precio']
+
+class OximetrosDelete(LoginRequiredMixin, DeleteView):
+    
+    model = Oximetros
+    success_url = "/AppCoder/oximetro/list"
+ 
 #login/logout
 
 def login_request(request):
@@ -128,32 +183,4 @@ def register(request):
     
     return render(request, "AppCoder/register.html", {"form": form})                       
 
-#otras clases
 
-def inmuebleFormulario(request):
-    if request.method == 'POST':
-        miFormulario2 = InmuebleFormulario(request.POST)        
-        if miFormulario2.is_valid():
-            informacion = miFormulario2.cleaned_data
-            abc = Inmuebles(direccion=informacion['direccion'],ciudad=informacion['ciudad'],anio=informacion['anio'])
-            abc.save()
-            return render(request,"AppCoder/inicio.html")
-    else:
-        
-        miFormulario2 = InmuebleFormulario()
-        
-    return render(request,"AppCoder/inmuebleFormulario.html", {"miFormulario2": miFormulario2})
-
-def facultadFormulario(request):
-    if request.method == 'POST':
-        miFormulario3 = FacultadFormulario(request.POST)        
-        if miFormulario3.is_valid():
-            informacion = miFormulario3.cleaned_data
-            abc = Facultad(anio=informacion['anio'],carrera=informacion['carrera'],universidad=informacion['universidad'],email=informacion['email'])
-            abc.save()
-            return render(request,"AppCoder/inicio.html")
-    else:
-        
-        miFormulario3 = FacultadFormulario()
-        
-    return render(request,"AppCoder/facultadFormulario.html", {"miFormulario3": miFormulario3})

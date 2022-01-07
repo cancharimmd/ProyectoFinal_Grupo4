@@ -21,19 +21,19 @@ class VacunaFormulario(forms.Form):
     pais_origen = forms.CharField()
     grado_de_dolor = forms.IntegerField(required=False, max_value= 3, min_value=1)
     
-class InmuebleFormulario(forms.Form):
+class BarbijosFormulario(forms.Form):
+
+    marca= forms.CharField(max_length=40)
+    tamanio= forms.CharField(max_length=40)
+    precio = forms.IntegerField(required=True)
+
+class OximetrosFormulario(forms.Form):
+
+    marca= forms.CharField(max_length=40)
+    marca= forms.CharField(max_length=40)
+    precio = forms.IntegerField(required=True)
     
-    direccion = forms.CharField()
-    ciudad = forms.CharField()
-    anio = forms.IntegerField()
-    
-    
-class FacultadFormulario(forms.Form):
-    
-    anio = forms.IntegerField()
-    carrera = forms.CharField()
-    universidad = forms.CharField()
-    email = forms.EmailField()
+
     
     
     

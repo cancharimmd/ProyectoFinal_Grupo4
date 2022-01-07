@@ -15,20 +15,23 @@ class Vacunas(models.Model):
     def __str__(self):
         return f"Vacuna de proveedor {self.proveedor} - Creado el {self.fecha_creacion} - Creado en {self.pais_origen} - Con un grado de dolor : {self.grado_de_dolor}"
 
-class Inmuebles(models.Model):
-
-    direccion = models.CharField(max_length=40)
-    ciudad = models.CharField(max_length=40)
-    anio = models.IntegerField()
+class Barbijos(models.Model):
+    
+    marca= models.CharField(max_length=40)
+    tamanio= models.CharField(max_length=20)
+    precio= models.IntegerField()
 
     def __str__(self):
-        return f"INMUEBLE: Dirección {self.direccion} - Ciudad {self.ciudad} - Año {self.anio}"
-class Facultad(models.Model):
 
-    anio = models.IntegerField()
-    carrera = models.CharField(max_length=40)
-    universidad = models.CharField(max_length=40)
-    email = models.EmailField(max_length=40, default="", editable = False)
- 
+        return f"Barbijos: Marca: {self.marca} Tamaño: {self.tamanio} Precio: {self.precio} "
+
+
+class Oximetros(models.Model):
+    
+    marca= models.CharField(max_length=40)
+    modelo= models.CharField(max_length=20)
+    precio= models.IntegerField()
+
     def __str__(self):
-        return f"FACULTAD: Año {self.anio} - Carrera {self.carrera} - Universidad {self.universidad} - Email {self.email}"
+
+        return f"Oximetro: Marca: {self.marca} Tamaño: {self.modelo} Precio: {self.precio} "

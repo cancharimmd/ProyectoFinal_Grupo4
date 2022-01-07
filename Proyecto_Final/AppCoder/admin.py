@@ -7,6 +7,6 @@ from .models import *
 
 admin.site.register(Vacunas)
 
-admin.site.register(Inmuebles)
+admin.site.register(Barbijos)
 
-admin.site.register(Facultad)
+admin.site.register(Oximetros)
