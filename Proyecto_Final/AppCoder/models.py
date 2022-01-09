@@ -1,5 +1,7 @@
 from django.db import models
 
+
+
 class Vacunas(models.Model):
     INTENSIDAD = (
         (1, 'Poco'),
@@ -35,3 +37,5 @@ class Oximetros(models.Model):
     def __str__(self):
 
         return f"Oximetro: Marca: {self.marca} Tamaño: {self.modelo} Precio: {self.precio} "
+    
+

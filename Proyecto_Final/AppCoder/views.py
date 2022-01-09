@@ -15,6 +15,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 #Render del inicio
 
+
 def inicio(request):
     return render(request, "AppCoder/inicio.html")
 
