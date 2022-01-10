@@ -51,10 +51,10 @@ Pagina Web con 3 clases:
   **_AUTORES_**
   *** 
     
-  1.- [DIEGO CANCHARI]
+  1.- [DIEGO CANCHARI] .- Junto las partes y realizó el modelo vacunas
   
-  2.- [EDITH JORDÁN]
+  2.- [EDITH JORDÁN] .- Realizó el modelo oximetro
   
-  3.- [FEDERICO NIZZO]
+  3.- [FEDERICO NIZZO] .- Modificó el inicio de la pagina
   
-  4.- [FEDERICO MONTOYA]
+  4.- [FEDERICO MONTOYA] Realizó el modelo barbijos y realizó el testeo
