@@ -17,9 +17,9 @@
 **_DESCRIPCIÓN_**
 ***
 Pagina Web con 3 clases:
-  ## 1) Clase Autos 
-  ## 2) Clase Inmuebles 
-  ## 3) Clase Facultad
+  ## 1) Clase Vacunas 
+  ## 2) Clase Barbijos 
+  ## 3) Clase Oxímetros
   
 **_TECNOLOGÍA_**
  ***
@@ -32,19 +32,21 @@ Pagina Web con 3 clases:
  
   **_RUTAS PRINCIPALES_**
   *** 
-    1.- [INICIO] /AppCoder/inicio
-    2.- [AUTOS] /AppCoder/autos
-      2.1.- [FORMULARIO AUTOS] /AppCoder/autoFormulario
-    3.- [INMUEBLES] /AppCoder/inmuebles
-      3.1.- [FORMULARIO INMUEBLES] /AppCoder/inmuebleFormulario
-    4.- [FACULTAD] /AppCoder/facultad
-      4.1.- [FORMULARIO FACULTAD] /AppCoder/facultadFormulario
+   1.- [INICIO] /AppCoder/inicio
+    2.- [Vacunas] /AppCoder/vacunas
+      2.1.- [VER TODAS LAS VACUNAS] /AppCoder/vacunas/list
+    3.- [BARBIJOS] /AppCoder/barbijos
+      3.1.- [VER TODOS LOS BARBIJOS] /AppCoder/barbijos/list
+    4.- [OXÍMETROS] /AppCoder/oximetros
+      4.1.- [VER TODOS LOS OXIMETROS] /AppCoder/oximetros/list
     5.- [ADMIN] /admin (Usuario: diego; Password: 123456)
-   
+    6.- [SIGN UP] /AppCoder/register
+    7.- [LOGIN] /AppCoder/login
+    
   **_PREVIEW_**
   *** 
   
-  ![image](https://user-images.githubusercontent.com/50807727/146293252-cce62a85-58f1-4750-a9bd-e0ccc0a5441c.png)
+![image](https://user-images.githubusercontent.com/50807727/148831397-1cb18e5f-c1a0-4476-836c-95c4b11776d4.png)
   
   **_AUTORES_**
   *** 
